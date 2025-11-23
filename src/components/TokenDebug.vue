@@ -20,16 +20,16 @@
       </div>
 
       <div v-if="isAuthenticated">
-        <span class="font-semibold">Token Expires In: </span>
-        <span :class="tokenExpiresIn < 30 ? 'text-orange-600' : 'text-green-600'">
-          {{ tokenExpiresIn }}s
+        <span class="font-semibold">Has Refresh Token: </span>
+        <span :class="hasRefreshToken ? 'text-green-600' : 'text-red-600'">
+          {{ hasRefreshToken ? 'Yes' : 'No' }}
         </span>
       </div>
 
       <div v-if="isAuthenticated">
-        <span class="font-semibold">Has Refresh Token: </span>
-        <span :class="hasRefreshToken ? 'text-green-600' : 'text-red-600'">
-          {{ hasRefreshToken ? 'Yes' : 'No' }}
+        <span class="font-semibold">Token Expires In: </span>
+        <span :class="tokenExpiresIn < 30 ? 'text-orange-600' : 'text-green-600'">
+          {{ tokenExpiresIn }}s
         </span>
       </div>
 
