@@ -6,7 +6,6 @@ import {
   login as keycloakLogin,
   logout as keycloakLogout,
   getToken,
-  getRefreshToken,
   isAuthenticated as keycloakIsAuthenticated,
   getUserProfile,
   getKeycloakInstance,
@@ -16,7 +15,6 @@ import {
 export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null)
   const accessToken = ref<string | null>(null)
-  const refreshToken = ref<string | null>(null)
   const isLoading = ref(false)
 
   const isAuthenticated = computed(() => keycloakIsAuthenticated())
@@ -25,11 +23,7 @@ export const useAuthStore = defineStore('auth', () => {
     isLoading.value = true
     try {
       const authenticated = await initKeycloak()
-
-      if (authenticated) {
-        await loadUserData()
-      }
-
+      if (authenticated) await loadUserData()
       return authenticated
     } catch (error) {
       console.error('Failed to initialize auth:', error)
@@ -42,7 +36,6 @@ export const useAuthStore = defineStore('auth', () => {
   const loadUserData = async (): Promise<void> => {
     const keycloak = getKeycloakInstance()
     const profile = await getUserProfile()
-
     if (profile && keycloak.tokenParsed) {
       user.value = {
         id: profile.id || keycloak.tokenParsed.sub || '',
@@ -52,38 +45,30 @@ export const useAuthStore = defineStore('auth', () => {
         lastName: profile.lastName,
         roles: keycloak.tokenParsed.realm_access?.roles || [],
       }
-
       accessToken.value = getToken() || null
-      refreshToken.value = getRefreshToken()
     }
   }
 
-  const login = async (): Promise<void> => {
-    await keycloakLogin()
-  }
-
+  const login = async (): Promise<void> => keycloakLogin()
   const logout = async (): Promise<void> => {
     user.value = null
     accessToken.value = null
-    refreshToken.value = null
     await keycloakLogout()
   }
 
-  const updateTokens = (): void => {
+  const updateToken = (): void => {
     accessToken.value = getToken() || null
-    refreshToken.value = getRefreshToken()
   }
 
   return {
     user,
     accessToken,
-    refreshToken,
     isLoading,
     isAuthenticated,
     initialize,
     login,
     logout,
-    updateTokens,
+    updateToken,
     loadUserData,
     ensureTokenValid,
   }

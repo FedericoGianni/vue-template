@@ -178,7 +178,7 @@ VITE_KEYCLOAK_CLIENT_ID=vue-template
 5. User authenticates with Keycloak (PKCE flow)
 6. Tokens are received:
    - **Access token** stored in memory
-   - **Refresh token** stored in a secure, HttpOnly cookie
+   - **Refresh token** stored in memory. It should be later stored as a secure, HttpOnly cookie (needs backend to do so)
 7. User is redirected to dashboard
 8. Access token automatically refreshed before expiration
 

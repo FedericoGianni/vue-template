@@ -53,11 +53,11 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { X } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
-import { getKeycloakInstance, getRefreshToken } from '@/services/keycloak'
+import { getKeycloakInstance } from '@/services/keycloak'
 import { logger } from '@/utils/logger'
 
 const isDebugMode = import.meta.env.VITE_APP_DEBUG === 'true'
-const isVisible = ref(true) // Resets to true on each page load
+const isVisible = ref(true)
 
 const isAuthenticated = ref(false)
 const tokenExpiresIn = ref(0)
@@ -69,14 +69,12 @@ let interval: number | null = null
 const updateTokenInfo = () => {
   const kc = getKeycloakInstance()
   isAuthenticated.value = kc.authenticated ?? false
-  hasRefreshToken.value = !!getRefreshToken()
+  // Check if in-memory refresh token exists
+  hasRefreshToken.value = !!kc.refreshToken
 
   if (kc.tokenParsed?.exp) {
     const expiresAt = kc.tokenParsed.exp * 1000
-    const newExpiresIn = Math.max(0, Math.floor((expiresAt - Date.now()) / 1000))
-
-    // Force reactive update
-    tokenExpiresIn.value = newExpiresIn
+    tokenExpiresIn.value = Math.max(0, Math.floor((expiresAt - Date.now()) / 1000))
   } else {
     tokenExpiresIn.value = 0
   }
@@ -90,7 +88,7 @@ const checkToken = () => {
     expiresIn: tokenExpiresIn.value + 's',
     hasRefreshToken: hasRefreshToken.value,
     tokenPreview: kc.token?.substring(0, 20) + '...',
-    refreshTokenPreview: getRefreshToken()?.substring(0, 20) + '...',
+    refreshTokenPreview: kc.refreshToken?.substring(0, 20) + '...',
     issuedAt: kc.tokenParsed?.iat ? new Date(kc.tokenParsed.iat * 1000).toLocaleTimeString() : 'unknown',
     expiresAt: kc.tokenParsed?.exp ? new Date(kc.tokenParsed.exp * 1000).toLocaleTimeString() : 'unknown',
   })
@@ -107,10 +105,8 @@ const forceRefresh = async () => {
       expiresIn: oldExpiry ? Math.floor((oldExpiry * 1000 - Date.now()) / 1000) : 0
     })
 
-    // Force refresh by using a very high minValidity value
     const refreshed = await kc.updateToken(9999)
 
-    // Give Keycloak a moment to update tokenParsed
     await new Promise(resolve => setTimeout(resolve, 100))
 
     const newExpiry = kc.tokenParsed?.exp
@@ -121,8 +117,6 @@ const forceRefresh = async () => {
     })
 
     lastRefresh.value = new Date().toLocaleTimeString()
-
-    // Force UI update
     updateTokenInfo()
 
     if (!refreshed) {
@@ -139,8 +133,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  if (interval) {
-    clearInterval(interval)
-  }
+  if (interval) clearInterval(interval)
 })
 </script>
