@@ -21,7 +21,7 @@ test:
       - node_modules/
       - .npm/
   before_script:
-    - npm ci --cache .npm --prefer-offline
+    - npm install --cache .npm --prefer-offline
   script:
     - echo "Running tests..."
     - npm run test
@@ -38,7 +38,6 @@ test:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_COMMIT_BRANCH == "main"'
     - if: '$CI_COMMIT_BRANCH == "develop"'
-    - if: '$CI_PIPELINE_SOURCE == "web"'
 
 # SONAR STAGE
 sonar_code_analysis:
