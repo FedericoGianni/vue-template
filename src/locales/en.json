@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "documents": "Documents",
+    "settings": "Settings"
+  },
+  "auth": {
+    "login": "Sign in with Keycloak",
+    "logout": "Logout",
+    "welcome": "Welcome",
+    "signInMessage": "Sign in to your account to continue",
+    "redirecting": "Redirecting..."
+  },
+  "theme": {
+    "toggleDark": "Toggle dark mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "sidebar": {
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
+  },
+  "language": {
+    "select": "Select language",
+    "english": "English",
+    "italian": "Italian"
+  },
+  "pages": {
+    "users": {
+      "subtitle": "Manage your team members and permissions",
+      "teamMembers": "Team Members",
+      "teamDescription": "A list of all users in your organization",
+      "addUser": "Add User",
+      "export": "Export",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "actions": "Actions",
+      "edit": "Edit",
+      "remove": "Remove",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "documents": {
+      "subtitle": "Manage and organize your documents",
+      "newDocument": "New Document",
+      "upload": "Upload",
+      "size": "Size",
+      "modified": "Modified",
+      "sharedWith": "Shared with",
+      "people": "people",
+      "view": "View",
+      "download": "Download"
+    },
+    "settings": {
+      "subtitle": "Manage your account and application preferences",
+      "profile": "Profile Settings",
+      "profileDescription": "Update your personal information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "managedByKeycloak": "Managed by Keycloak",
+      "appearance": "Appearance",
+      "appearanceDescription": "Customize how the application looks",
+      "darkMode": "Dark Mode",
+      "darkModeDescription": "Toggle between light and dark theme",
+      "language": "Language",
+      "languageDescription": "Select your preferred language",
+      "notifications": "Notifications",
+      "notificationsDescription": "Configure how you receive notifications",
+      "emailNotifications": "Email Notifications",
+      "emailNotificationsDescription": "Receive notifications via email",
+      "pushNotifications": "Push Notifications",
+      "pushNotificationsDescription": "Receive push notifications in browser",
+      "weeklyDigest": "Weekly Digest",
+      "weeklyDigestDescription": "Get a weekly summary of activities",
+      "marketingEmails": "Marketing Emails",
+      "marketingEmailsDescription": "Receive updates and offers",
+      "dangerZone": "Danger Zone",
+      "dangerZoneDescription": "Irreversible actions",
+      "deleteAccount": "Delete Account",
+      "deleteAccountDescription": "Permanently delete your account and all data"
+    },
+    "dashboard": {
+      "welcome": "Welcome back, {name}!",
+      "totalRevenue": "Total Revenue",
+      "revenueChange": "+20.1% from last month",
+      "subscriptions": "Subscriptions",
+      "subscriptionsChange": "+180.1% from last month",
+      "sales": "Sales",
+      "salesChange": "+19% from last month",
+      "activeNow": "Active Now",
+      "activeChange": "+201 since last hour",
+      "recentActivity": "Recent Activity",
+      "recentActivityDescription": "You have 3 new notifications today.",
+      "quickActions": "Quick Actions",
+      "quickActionsDescription": "Common tasks and shortcuts",
+      "createNewDocument": "Create New Document",
+      "inviteTeamMember": "Invite Team Member",
+      "configureSettings": "Configure Settings"
+    }
+  }
+}

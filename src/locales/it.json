@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Utenti",
+    "documents": "Documenti",
+    "settings": "Impostazioni"
+  },
+  "auth": {
+    "login": "Accedi con Keycloak",
+    "logout": "Esci",
+    "welcome": "Benvenuto",
+    "signInMessage": "Accedi al tuo account per continuare",
+    "redirecting": "Reindirizzamento..."
+  },
+  "theme": {
+    "toggleDark": "Attiva/disattiva modalità scura",
+    "light": "Chiaro",
+    "dark": "Scuro"
+  },
+  "sidebar": {
+    "collapse": "Comprimi barra laterale",
+    "expand": "Espandi barra laterale"
+  },
+  "language": {
+    "select": "Seleziona lingua",
+    "english": "Inglese",
+    "italian": "Italiano"
+  },
+  "pages": {
+    "users": {
+      "subtitle": "Gestisci i membri del team e i permessi",
+      "teamMembers": "Membri del Team",
+      "teamDescription": "Elenco di tutti gli utenti della tua organizzazione",
+      "addUser": "Aggiungi Utente",
+      "export": "Esporta",
+      "name": "Nome",
+      "email": "Email",
+      "role": "Ruolo",
+      "status": "Stato",
+      "actions": "Azioni",
+      "edit": "Modifica",
+      "remove": "Rimuovi",
+      "active": "Attivo",
+      "inactive": "Inattivo"
+    },
+    "documents": {
+      "subtitle": "Gestisci e organizza i tuoi documenti",
+      "newDocument": "Nuovo Documento",
+      "upload": "Carica",
+      "size": "Dimensione",
+      "modified": "Modificato",
+      "sharedWith": "Condiviso con",
+      "people": "persone",
+      "view": "Visualizza",
+      "download": "Scarica"
+    },
+    "settings": {
+      "subtitle": "Gestisci il tuo account e le preferenze dell'applicazione",
+      "profile": "Impostazioni Profilo",
+      "profileDescription": "Aggiorna le tue informazioni personali",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "managedByKeycloak": "Gestito da Keycloak",
+      "appearance": "Aspetto",
+      "appearanceDescription": "Personalizza l'aspetto dell'applicazione",
+      "darkMode": "Modalità Scura",
+      "darkModeDescription": "Passa tra tema chiaro e scuro",
+      "language": "Lingua",
+      "languageDescription": "Seleziona la tua lingua preferita",
+      "notifications": "Notifiche",
+      "notificationsDescription": "Configura come ricevere le notifiche",
+      "emailNotifications": "Notifiche Email",
+      "emailNotificationsDescription": "Ricevi notifiche via email",
+      "pushNotifications": "Notifiche Push",
+      "pushNotificationsDescription": "Ricevi notifiche push nel browser",
+      "weeklyDigest": "Riepilogo Settimanale",
+      "weeklyDigestDescription": "Ricevi un riepilogo settimanale delle attività",
+      "marketingEmails": "Email Marketing",
+      "marketingEmailsDescription": "Ricevi aggiornamenti e offerte",
+      "dangerZone": "Zona Pericolosa",
+      "dangerZoneDescription": "Azioni irreversibili",
+      "deleteAccount": "Elimina Account",
+      "deleteAccountDescription": "Elimina permanentemente il tuo account e tutti i dati"
+    },
+    "dashboard": {
+      "welcome": "Bentornato, {name}!",
+      "totalRevenue": "Ricavi Totali",
+      "revenueChange": "+20.1% dal mese scorso",
+      "subscriptions": "Abbonamenti",
+      "subscriptionsChange": "+180.1% dal mese scorso",
+      "sales": "Vendite",
+      "salesChange": "+19% dal mese scorso",
+      "activeNow": "Attivi Ora",
+      "activeChange": "+201 dall'ultima ora",
+      "recentActivity": "Attività Recenti",
+      "recentActivityDescription": "Hai 3 nuove notifiche oggi.",
+      "quickActions": "Azioni Rapide",
+      "quickActionsDescription": "Attività comuni e scorciatoie",
+      "createNewDocument": "Crea Nuovo Documento",
+      "inviteTeamMember": "Invita Membro del Team",
+      "configureSettings": "Configura Impostazioni"
+    }
+  }
+}
