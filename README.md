@@ -2,7 +2,7 @@
 
 Production-ready Vue 3 template with TypeScript, KeyCloak, Pinia, Shadcn, Tailwind, Vite
 
-> **🚀 Want to get started quickly?** See [QUICKSTART.md](./QUICKSTART.md) 
+> **🚀 Want to get started quickly?** See [QUICKSTART.md](./docs/QUICKSTART.md) 
 
 ## Project Structure
 
