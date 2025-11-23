@@ -4,6 +4,10 @@ Production-ready Vue 3 template with TypeScript, KeyCloak, Pinia, Shadcn, Tailwi
 
 > **🚀 Want to get started quickly?** See [QUICKSTART.md](./docs/QUICKSTART.md) 
 
+| Light | Dark |
+|---------|---------|
+| ![Light](./docs/images/light-dashboard.png) | ![Dark](./docs/images/dark-dashboard.png) |
+
 ## Project Structure
 
 ```
