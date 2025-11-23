@@ -1,6 +1,6 @@
 <template>
   <div class="fixed bottom-4 right-4 text-[10px] text-muted-foreground">
-    [VERSION]
+    [[VERSION]]
   </div>
 </template>
 
