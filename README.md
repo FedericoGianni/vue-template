@@ -12,24 +12,36 @@ Production-ready Vue 3 template with TypeScript, KeyCloak, Pinia, Shadcn, Tailwi
 
 ```
 vue-template/
-├── public/           # Static assets (favicon, SSO check)
+├── public/           # Global static assets
 ├── build/            # Docker build files
 ├── src/
-│   ├── assets/       # CSS & Tailwind imports
-│   ├── components/   # Layout & UI components (shadcn-vue)
-│   ├── lib/          # Utilities
+│   ├── assets/       
+│   │   ├── images/   # Static images used in components/pages
+│   │   ├── icons/    # Icons used in components/pages
+│   │   ├── styles/   # Global CSS / Tailwind imports
+│   ├── components/   # Components
+│   │   ├── layout/   # Layout level components: Sidebar, Header, Footer
+│   │   ├── ui/       # Reusable shadcn-ui components
+│   │   ├── custom/   # Reusable custom components
+│   ├── composables/  # Vue composables
+│   ├── i81n/         # Languages
+│   ├── locales/      # Translation JSON files
+│   ├── lib/          # Utilities and helpers
 │   ├── router/       # Vue Router config
-│   ├── services/     # External services (Keycloak)
+│   ├── services/     # External services (Keycloak, APIs)
 │   ├── stores/       # Pinia stores
 │   ├── types/        # TypeScript types
-│   ├── views/        # Pages (Dashboard, Login, 404)
+│   ├── views/        # Pages 
 │   ├── App.vue
 │   └── main.ts
 ├── index.html
 ├── package.json
-├── vite.config.ts
+├── postcss.config.js
+├── tailwind.config.js
 ├── tsconfig.json
-└── docker-compose.yml
+├── tsconfig.node.json
+├── vite.config.ts
+└── vitest.config.ts
 
 ```
 
