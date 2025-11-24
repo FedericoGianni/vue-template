@@ -1,4 +1,3 @@
-# Simpler Dockerfile - build locally, just copy dist
 FROM nginx:stable-alpine
 
 COPY dist /usr/share/nginx/html
